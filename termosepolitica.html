@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MGBR – Política de Privacidade & Termos de Serviço</title>
+  <meta name="description" content="Documentos legais do bot MGBR para Discord: Política de Privacidade e Termos de Serviço." />
+  <style>
+    :root {
+      --bg: #0b0f0c;          /* preto esverdeado */
+      --panel: #121712;       /* painel escuro */
+      --panel-2: #0f140f;
+      --text: #e7fbe7;        /* quase branco com leve verde */
+      --muted: #b3d9b3;
+      --accent: #19ff80;      /* verde neon */
+      --accent-2: #00d46a;    /* verde secundário */
+      --border: #223522;
+      --link: #7af5b0;
+      --focus: #36f28f;
+      --shadow: 0 10px 30px rgba(0, 255, 127, 0.15);
+      --radius: 16px;
+      --radius-lg: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 800px at 10% -10%, rgba(25, 255, 128, 0.06), transparent),
+                  radial-gradient(800px 600px at 90% 10%, rgba(0, 212, 106, 0.07), transparent),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header.hero {
+      padding: 28px 28px 16px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(600px 260px at 20% 0, rgba(25,255,128,0.07), transparent),
+        linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
+    }
+
+    .brand {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .brand .dot {
+      width: 14px; height: 14px; border-radius: 999px; background: var(--accent);
+      box-shadow: 0 0 24px rgba(25,255,128,0.6), 0 0 2px rgba(25,255,128,0.9);
+    }
+    h1 { font-size: 28px; margin: 0; letter-spacing: 0.2px; }
+    p.sub { margin: 6px 0 0; color: var(--muted); font-size: 14px; }
+
+    .tabs {
+      display: flex; gap: 10px; padding: 14px 16px; flex-wrap: wrap;
+      background: #0d140f;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tab-btn {
+      appearance: none; border: 1px solid var(--border);
+      background: #0d150f; color: var(--text);
+      padding: 10px 14px; border-radius: 999px; cursor: pointer;
+      font-weight: 600; letter-spacing: 0.2px; transition: transform .08s ease, border-color .15s ease, background .15s ease;
+    }
+    .tab-btn[aria-selected="true"] {
+      background: linear-gradient(180deg, rgba(25,255,128,0.18), rgba(25,255,128,0.06));
+      border-color: var(--accent-2);
+      box-shadow: inset 0 0 0 1px rgba(25,255,128,0.35), 0 6px 18px rgba(0,0,0,0.3);
+    }
+    .tab-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+    .tab-btn:hover { transform: translateY(-1px); }
+
+    main { padding: 22px; }
+
+    section[role="tabpanel"] {
+      display: none;
+      animation: fade .18s ease;
+    }
+    section[role="tabpanel"][data-active="true"] { display: block; }
+
+    @keyframes fade { from { opacity: 0 } to { opacity: 1 } }
+
+    h2 { font-size: 22px; margin: 0 0 14px; }
+    h3 { font-size: 18px; margin: 22px 0 8px; }
+    p, li { color: #e1f7e1; }
+    code, .kbd { background: #0a120d; border: 1px solid var(--border); border-radius: 8px; padding: 2px 6px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--muted);
+      margin-top: 8px;
+    }
+    .badge { border: 1px dashed var(--border); padding: 6px 10px; border-radius: 999px; }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .footer {
+      padding: 18px 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: 13px;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      background: #0d140f;
+    }
+
+    .cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 14px; border-radius: 999px; border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(25,255,128,0.18), rgba(25,255,128,0.06));
+      color: var(--text); font-weight: 600; text-decoration: none; box-shadow: var(--shadow);
+    }
+
+    /* Impressão: remove fundo e mostra tudo em sequência */
+    @media print {
+      body { background: white; color: black; }
+      .card, header.hero, .tabs, .footer { box-shadow: none; background: white; border: none; }
+      .tab-btn { display: none; }
+      section[role="tabpanel"] { display: block !important; }
+      a { color: black; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="region" aria-label="Documentos legais MGBR">
+      <header class="hero">
+        <div class="brand" aria-label="MGBR">
+          <span class="dot" aria-hidden="true"></span>
+          <div>
+            <h1>MGBR — Documentos Legais</h1>
+            <p class="sub">Política de Privacidade & Termos de Serviço para o bot MGBR no Discord.</p>
+            <div class="meta">
+              <span class="badge">Última atualização: <time id="lastUpdated" datetime="">—</time></span>
+              <span class="badge">Plataforma: Discord</span>
+              <span class="badge">Armazenamento: Banco de dados local (.db)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabs" role="tablist" aria-label="Selecionar documento">
+        <button class="tab-btn" id="tab-privacy" role="tab" aria-selected="true" aria-controls="panel-privacy">Política de Privacidade</button>
+        <button class="tab-btn" id="tab-terms" role="tab" aria-selected="false" aria-controls="panel-terms">Termos de Serviço</button>
+      </nav>
+
+      <main>
+        <!-- Política de Privacidade -->
+        <section id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy" data-active="true">
+          <h2>Política de Privacidade – MGBR</h2>
+          <p>O bot <strong>MGBR</strong>, disponível na plataforma Discord, respeita a privacidade dos usuários e se compromete a proteger suas informações.</p>
+
+          <h3>1. Coleta de Dados</h3>
+          <p>O <strong>MGBR</strong> <em>não</em> coleta informações pessoais dos usuários além do estritamente necessário para o funcionamento correto de seus comandos e funcionalidades.</p>
+          <p>Os dados que possam ser processados (por exemplo: configurações de servidor, registros de moderação e preferências) são mantidos apenas para viabilizar o funcionamento do bot.</p>
+
+          <h3>2. Uso de Dados</h3>
+          <p>Qualquer informação processada pelo bot é utilizada <strong>exclusivamente</strong> para fornecer as funcionalidades solicitadas dentro do Discord e melhorar a estabilidade do serviço.</p>
+
+          <h3>3. Armazenamento</h3>
+          <p>Os dados ficam armazenados em um <strong>banco de dados local</strong> no formato <code>.db</code>. Não há transmissão de dados para fora do ambiente controlado pelo desenvolvedor.</p>
+
+          <h3>4. Compartilhamento</h3>
+          <p>O bot <strong>não compartilha</strong>, vende ou disponibiliza informações de usuários a terceiros.</p>
+
+          <h3>5. Direitos dos Usuários</h3>
+          <p>Você pode solicitar a remoção dos dados do seu servidor a qualquer momento. Basta entrar em contato pelos canais oficiais indicados abaixo.</p>
+
+          <h3>6. Contato</h3>
+          <p>Para dúvidas ou solicitações relacionadas à privacidade, utilize o <a id="discordLink1" href="#" rel="noopener" target="_blank">Servidor oficial do MGBR</a> no Discord.</p>
+        </section>
+
+        <!-- Termos de Serviço -->
+        <section id="panel-terms" role="tabpanel" aria-labelledby="tab-terms" data-active="false">
+          <h2>Termos de Serviço – MGBR</h2>
+          <p>Ao utilizar o bot <strong>MGBR</strong> no Discord, você concorda com os termos abaixo.</p>
+
+          <h3>1. Uso do Bot</h3>
+          <ul>
+            <li>O bot está disponível gratuitamente na plataforma Discord.</li>
+            <li>O uso deve respeitar os <a href="https://discord.com/terms" target="_blank" rel="noopener">Termos de Serviço do Discord</a> e as <a href="https://discord.com/guidelines" target="_blank" rel="noopener">Diretrizes da Comunidade</a>.</li>
+          </ul>
+
+          <h3>2. Responsabilidades</h3>
+          <ul>
+            <li>O desenvolvedor do MGBR não se responsabiliza por danos, perdas ou problemas decorrentes do uso do bot.</li>
+            <li>O(a) administrador(a) do servidor é responsável pela forma como o bot é utilizado dentro de sua comunidade.</li>
+          </ul>
+
+          <h3>3. Armazenamento de Dados</h3>
+          <ul>
+            <li>O bot pode armazenar dados mínimos (como configurações e preferências) para garantir seu funcionamento.</li>
+            <li>Esses dados ficam restritos a um <strong>banco de dados local (.db)</strong> e não são utilizados para nenhum outro fim.</li>
+          </ul>
+
+          <h3>4. Modificações</h3>
+          <ul>
+            <li>O desenvolvedor pode atualizar o bot, esta Política de Privacidade e estes Termos a qualquer momento.</li>
+            <li>Mudanças relevantes serão comunicadas através do <a id="discordLink2" href="#" rel="noopener" target="_blank">Servidor oficial do MGBR</a>.</li>
+          </ul>
+
+          <h3>5. Contato</h3>
+          <p>Para dúvidas, suporte ou solicitações, utilize o <a id="discordLink3" href="#" rel="noopener" target="_blank">Servidor oficial do MGBR</a> no Discord.</p>
+        </section>
+      </main>
+
+      <div class="footer">
+        <span>© <span id="year">2025</span> MGBR. Todos os direitos reservados.</span>
+        <a class="cta" id="discordLink4" href="#" rel="noopener" target="_blank" aria-label="Abrir Servidor oficial do MGBR no Discord">Abrir servidor do MGBR</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Tabs
+    const $ = (q) => document.querySelector(q);
+    const tabPrivacy = $('#tab-privacy');
+    const tabTerms = $('#tab-terms');
+    const panelPrivacy = $('#panel-privacy');
+    const panelTerms = $('#panel-terms');
+
+    function activate(tab) {
+      const isPrivacy = tab === 'privacy';
+      panelPrivacy.dataset.active = isPrivacy;
+      panelTerms.dataset.active = !isPrivacy;
+      tabPrivacy.setAttribute('aria-selected', isPrivacy);
+      tabTerms.setAttribute('aria-selected', !isPrivacy);
+    }
+
+    tabPrivacy.addEventListener('click', () => activate('privacy'));
+    tabTerms.addEventListener('click', () => activate('terms'));
+
+    // Datas dinâmicas (Brasil)
+    const now = new Date();
+    const fmt = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+    const lastUpdatedEl = document.getElementById('lastUpdated');
+    lastUpdatedEl.textContent = fmt.format(now);
+    lastUpdatedEl.setAttribute('datetime', now.toISOString());
+    document.getElementById('year').textContent = now.getFullYear();
+
+    // Link do servidor do Discord – altere aqui
+    const DISCORD_SERVER_URL = 'https://discord.gg/S9yCGs689b'; // TODO: troque pelo link real do servidor
+    ['discordLink1','discordLink2','discordLink3','discordLink4'].forEach(id => {
+      const a = document.getElementById(id);
+      a.href = DISCORD_SERVER_URL;
+    });
+  </script>
+</body>
+</html>
